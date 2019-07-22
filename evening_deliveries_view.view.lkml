@@ -179,6 +179,28 @@ dimension: exceptions {
   }
 
 
+
+  dimension: total_exc_amount {
+    type: number
+    value_format_name: gbp_format
+    sql: ${TABLE}."TOTAL_EXC_AMOUNT" ;;
+  }
+
+  dimension: total_inc_amount {
+    type: number
+    value_format_name: gbp_format
+    sql: ${TABLE}."TOTAL_INC_AMOUNT" ;;
+  }
+
+  dimension: vat_amount {
+    type: number
+    value_format_name: gbp_format
+    sql: ${TABLE}."VAT_AMOUNT" ;;
+  }
+
+
+
+
   dimension: bookingvscollection {
 
     type: number

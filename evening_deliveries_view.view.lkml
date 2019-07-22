@@ -209,7 +209,7 @@ view: evening_deliveries_view {
 
   measure: count {
     type: count
-    drill_fields: [customer_name]
+    drill_fields: [drilldown*]
   }
 
   set: drilldown {

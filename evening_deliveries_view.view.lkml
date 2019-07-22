@@ -167,15 +167,16 @@ view: evening_deliveries_view {
   }
 
 
-dimension: del_sla {
+dimension: exceptions {
   type: string
-  sql: case
-      when ${del_d} is null then 'not delivered'
-      when ${del_d} <= ${del_by_d} then 'delivered before window'
-      when ${del_d}> ${del_by_d} then 'delivered outside window' end ;;
+  sql: ${TABLE}."EXCEPTIONS" ;;
 }
 
 
+  dimension: sla {
+    type: string
+    sql: ${TABLE}."SLA" ;;
+  }
 
 
   dimension: bookingvscollection {

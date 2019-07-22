@@ -108,6 +108,11 @@ view: evening_deliveries_view {
     sql: ${TABLE}."MOBILE" ;;
   }
 
+  dimension: driver_name {
+    type: string
+    sql: ${TABLE}."DRIVER_NAME" ;;
+  }
+
   dimension: reference {
     type: string
     sql: ${TABLE}."REFERENCE" ;;
@@ -258,7 +263,11 @@ dimension: exceptions {
   }
 
   set: drilldown {
-    fields: []
+    fields: [customer_key, customer_name, status,job_number,department,
+      reference,service_code,service_description,vehicle_code, vehicle_desc, booking_d, pick_d,
+      deliver_date, deliver_by_date, job_circuit_desc, exceptions, sla,
+      sc, col,del,driver, driver, driver_name, mobile, total_exc_amount, vat_amount, total_inc_amount
+      ]
   }
 
 }

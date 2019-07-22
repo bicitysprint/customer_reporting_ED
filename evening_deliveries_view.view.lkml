@@ -284,6 +284,27 @@ dimension: exceptions {
 
   }
 
+  measure: vol_bookings {
+    type: sum
+    sql: ${vol_of_bookings} ;;
+    drill_fields: [drilldown*]
+  }
+
+  measure: vol_del {
+    type: sum
+    sql: ${vol_of_deliveries} ;;
+    drill_fields: [drilldown*]
+  }
+
+
+  measure: vol_ex {
+    type: sum
+    sql: ${vol_of_exceptions} ;;
+    drill_fields: [drilldown*]
+  }
+
+
+
 
   measure: count {
     type: count

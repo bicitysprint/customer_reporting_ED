@@ -143,6 +143,51 @@ view: evening_deliveries_view {
     sql: ${TABLE}."VEHICLE_DESC" ;;
   }
 
+
+
+  dimension: booking_d {
+    type: date_time
+    sql: ${TABLE}."BOOKING_DATE" ;;
+  }
+
+  dimension: pick_d {
+    type: date_time
+    sql: ${TABLE}."PICKUP_DATE" ;;
+  }
+
+
+  dimension: bookingvscollection {
+
+    type: number
+    sql: datediff(minute,${booking_d},${pick_d}) ;;
+
+  }
+
+
+  dimension: bookingvscollectioncategory2 {
+
+
+    type:  string
+    sql:
+
+        case
+      when ${bookingvscollection} is null then 'not allocated/not picked-up'
+      when ${bookingvscollection} = 0 then 'on time'
+      when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 30   then '30 min or less are late'
+      when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -30  then '30 min or less are early'
+      when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 60   then '60 min or less are late'
+      when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -60  then '60 min or less are early'
+      when ${bookingvscollection} > 60 then '60 min plus are late'
+      when ${bookingvscollection} < -60 then '60 min plus are early'
+      else 'other' end
+      ;;
+
+
+    }
+
+
+
+
   measure: count {
     type: count
     drill_fields: [customer_name]

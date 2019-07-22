@@ -217,7 +217,21 @@ dimension: exceptions {
     sql: ${TABLE}."VAT_AMOUNT" ;;
   }
 
+  dimension: vol_of_bookings {
+    type: number
+    sql: ${TABLE}."VOL_OF_BOOKINGS" ;;
+  }
 
+
+  dimension: vol_of_deliveries {
+    type: number
+    sql: ${TABLE}."VOL_OF_DELIVERIES" ;;
+  }
+
+  dimension: vol_of_exceptions {
+    type: number
+    sql: ${TABLE}."VOL_OF_EXCEPTIONS" ;;
+  }
 
 
   dimension: bookingvscollection {

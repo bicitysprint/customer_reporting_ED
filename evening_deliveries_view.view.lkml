@@ -156,6 +156,25 @@ view: evening_deliveries_view {
   }
 
 
+  dimension: del_d {
+    type: date_time
+    sql: ${TABLE}."DELIVER_DATE" ;;
+  }
+
+  dimension: del_by_d {
+    type: date_time
+    sql: ${TABLE}."DELIVER_BY" ;;
+  }
+
+
+dimension: del_sla {
+  type: yesno
+  sql: case
+      when ${del_d} < ${del_by_d}  ;;
+
+}
+
+
   dimension: bookingvscollection {
 
     type: number

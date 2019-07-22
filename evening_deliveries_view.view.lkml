@@ -168,11 +168,14 @@ view: evening_deliveries_view {
 
 
 dimension: del_sla {
-  type: yesno
+  type: string
   sql: case
-      when ${del_d} < ${del_by_d}  ;;
-
+      when ${del_d} is null then 'not delivered'
+      when ${del_d} <= ${del_by_d} then 'delivered before window'
+      when ${del_d}> ${del_by_d} then 'delivered outside window' end ;;
 }
+
+
 
 
   dimension: bookingvscollection {

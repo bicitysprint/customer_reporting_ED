@@ -171,6 +171,7 @@ view: evening_deliveries_view {
   }
 
   dimension: pick_d {
+    label: "Pickup time"
     type: date_time
     sql: ${TABLE}."PICKUP_DATE" ;;
   }
@@ -320,8 +321,8 @@ dimension: exceptions {
 
   set: drilldown {
     fields: [customer_key, customer_name, status,job_number,department,
-      reference,service_code, booking_date, pick_d,
-      deliver_date, deliver_by_date, exceptions, sla, col,del,driver, driver, driver_name, mobile
+      reference,service_code, booking_time, pick_d,
+      deliver_time, deliver_by_date, exceptions, sla, col,del,driver, driver, driver_name, mobile
       ]
   }
 

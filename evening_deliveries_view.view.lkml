@@ -320,9 +320,8 @@ dimension: exceptions {
 
   set: drilldown {
     fields: [customer_key, customer_name, status,job_number,department,
-      reference,caller,service_code,service_description,vehicle_code, vehicle_desc, booking_date, pick_d,
-      deliver_date, deliver_by_date, job_circuit_desc, exceptions, sla,
-      sc, col,del,driver, driver, driver_name, mobile, total_exc_amount, vat_amount, total_inc_amount
+      reference,service_code, booking_date, pick_d,
+      deliver_date, deliver_by_date, exceptions, sla, col,del,driver, driver, driver_name, mobile
       ]
   }
 

@@ -107,7 +107,7 @@ view: evening_deliveries_view {
   }
 
   dimension: job_number {
-    type: number
+    type: string
     sql: ${TABLE}."JOB_NUMBER" ;;
   }
 

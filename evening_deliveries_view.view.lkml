@@ -242,6 +242,12 @@ dimension: exceptions {
   }
 
 
+  dimension: vol_of_non_deliveries {
+    type: number
+    sql: ${TABLE}."NON_DELIVERIES" ;;
+  }
+
+
   dimension: bookingvscollection {
 
     type: number
@@ -308,6 +314,13 @@ dimension: exceptions {
   measure: vol_ex {
     type: sum
     sql: ${vol_of_exceptions} ;;
+    drill_fields: [drilldown*]
+  }
+
+
+  measure: vol_non_del {
+    type: sum
+    sql: ${vol_of_non_deliveries} ;;
     drill_fields: [drilldown*]
   }
 

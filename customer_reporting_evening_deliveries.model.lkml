@@ -7,7 +7,6 @@ named_value_format: gbp_format {
   value_format: "\"£\"#,##0"
 }
 
-label: "Collection Time Display"
 
 
 datagroup: customer_reporting_evening_deliveries_default_datagroup {
@@ -19,5 +18,6 @@ persist_with: customer_reporting_evening_deliveries_default_datagroup
 
 
 explore: evening_deliveries_view {
+  group_label: "Webdesbatch"
   fields: [ALL_FIELDS*]
 }

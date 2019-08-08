@@ -248,6 +248,12 @@ dimension: exceptions {
   }
 
 
+  dimension: booking_date_cat {
+    type: string
+    sql: ${TABLE}."BOOKING_DATE_CAT" ;;
+  }
+
+
   dimension: bookingvscollection {
 
     type: number
